@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  coupon_code: MyString
+  discount_amount: 1
+  discount_type: MyString
+  expiration_date: 2022-01-11 23:39:41
+  free_item_count: 1
+  product_id: 1
+
+two:
+  coupon_code: MyString
+  discount_amount: 1
+  discount_type: MyString
+  expiration_date: 2022-01-11 23:39:41
+  free_item_count: 1
+  product_id: 1
