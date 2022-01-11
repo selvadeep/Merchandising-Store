@@ -1,42 +1,177 @@
 {
 	"info": {
-		"_postman_id": "2e22506d-8a0d-b82a-e499-51f20e780050",
-		"name": "PostRequest",
+		"_postman_id": "98074a12-ac09-4e73-9910-4614683214cd",
+		"name": "Practice",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "http://localhost:3000/audits",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Access-Token",
-						"value": "$2a$10$yxYo.sD0hzWeyr8/1.8VPeQsDaTxr6PzWnLx1vdLPeYDgUDpdf.HS"
+			"name": "merchandising_store",
+			"item": [
+				{
+					"name": "Add New Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product\":{\n        \"name\": \"Water Bottle\",\n        \"code\": \"Water\",\n        \"price\": 2\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products"
+							]
+						}
 					},
-					{
-						"key": "Content-Type",
-						"value": "application/json"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\"title\" : \"titile\",\n \"description\" : \"des\",\n \"scope_or_objective\" : \"scop\",\n \"audit_type\" : \"internal\",\n \"audit_against\" : \"asset\",\n \"start_date\" : \"Tue, 08 Nov 2016\",\n \"end_date\" : \"Fri, 09 Dec 2016\",\n \"audit_procedure\" : \"proc\",\n \"audit_frequency\" : \"monthly\",\n \"auditor_id\" : 1,\n \"users_id\" : 1,\n \"company_compliance_library_id\" : 1,\n \"team_id\" : 1,\n \"status\" : \"planned\",\n \"remarks\" : \"remld\",\n \"observation\": \"obso\"\n}"
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:3000/audits",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"audits"
-					]
+				{
+					"name": "Product List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
 				},
-				"description": "audit create"
-			},
-			"response": []
+				{
+					"name": "Update Product Price",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product\":{\n        \"price\": 100\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/products/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Items Price",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_codes\": [{\"MUG\": 1}, {\"TSHIRT\": 1}, {\"TSHIRT\": 1}, {\"TSHIRT\": 1}, {\"TSHIRT\": 1}, {\"MUG\": 1}, {\"HOODIE\": 1}]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/products/items_price",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"items_price"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Items Discount Price",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_codes\": [{\"MUG\": 1}, {\"TSHIRT\": 1}, {\"TSHIRT\": 1}, {\"TSHIRT\": 1}, {\"TSHIRT\": 1}, {\"MUG\": 1}, {\"HOODIE\": 1}]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/products/items_discounted_price",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"items_discounted_price"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Search",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name_or_code\": \"Apple\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/products/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
