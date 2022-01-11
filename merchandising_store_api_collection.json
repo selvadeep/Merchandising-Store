@@ -1,0 +1,42 @@
+{
+	"info": {
+		"_postman_id": "2e22506d-8a0d-b82a-e499-51f20e780050",
+		"name": "PostRequest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/audits",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Access-Token",
+						"value": "$2a$10$yxYo.sD0hzWeyr8/1.8VPeQsDaTxr6PzWnLx1vdLPeYDgUDpdf.HS"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"title\" : \"titile\",\n \"description\" : \"des\",\n \"scope_or_objective\" : \"scop\",\n \"audit_type\" : \"internal\",\n \"audit_against\" : \"asset\",\n \"start_date\" : \"Tue, 08 Nov 2016\",\n \"end_date\" : \"Fri, 09 Dec 2016\",\n \"audit_procedure\" : \"proc\",\n \"audit_frequency\" : \"monthly\",\n \"auditor_id\" : 1,\n \"users_id\" : 1,\n \"company_compliance_library_id\" : 1,\n \"team_id\" : 1,\n \"status\" : \"planned\",\n \"remarks\" : \"remld\",\n \"observation\": \"obso\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/audits",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"audits"
+					]
+				},
+				"description": "audit create"
+			},
+			"response": []
+		}
+	]
+}
